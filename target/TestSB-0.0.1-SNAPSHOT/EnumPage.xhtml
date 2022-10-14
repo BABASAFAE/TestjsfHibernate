@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  
+xmlns:h="http://xmlns.jcp.org/jsf/html"  
+xmlns:p="http://primefaces.org/ui"  
+xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsf/core"
+ >  
+
+<h:head>  
+<title>Checkbox Menu</title>  
+
+ <style>
+ body{
+
+ }
+ h2{
+
+ }
+ .button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 30px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: AliceBlue;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: CornflowerBlue}
+
+.button:active {
+  background-color: CornflowerBlue;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+ </style>
+</h:head>  
+<h:body>  
+<h:form> 
+ 
+
+<h:panelGrid columns="2" cellpadding="5">
+     
+<!--  <h5 class="mt-0">Basic</h5> -->
+<!--         <p:selectCheckboxMenu id="menu" value="#{checkboxView.selectedCities}" label="Cities" style="width: 15rem" -->
+<!--                                 filter="true" filterMatchMode="startsWith" panelStyle="width: 15rem" scrollHeight="250" -->
+<!--                                 dynamic="true"> -->
+<!--             <f:selectItems value="#{checkboxView.cities}"/> -->
+<!--         </p:selectCheckboxMenu> -->
+
+<!--         <h5>Multiple</h5> -->
+<!--         <p:selectCheckboxMenu id="multiple" value="#{checkboxView.selectedCities2}" label="Cities" style="min-width: 15rem" -->
+<!--                                   multiple="true" filter="true" filterMatchMode="startsWith" panelStyle="width: 30rem" scrollHeight="250" -->
+<!--                                   emptyLabel="Please select..." updateLabel="true"> -->
+<!--               <f:selectItems value="#{checkboxView.cities}"/> -->
+<!--             </p:selectCheckboxMenu> -->
+
+<!--         <h5>Grouped</h5> -->
+<!--         <p:selectCheckboxMenu id="grouped" value="#{checkboxView.selectedCountries}" label="Countries" style="width: 15rem" -->
+<!--                                 multiple="true" filter="true" filterMatchMode="startsWith" panelStyle="width: 15rem" scrollHeight="250"> -->
+<!--             <f:selectItems value="#{checkboxView.countries}"/> -->
+<!--         </p:selectCheckboxMenu> -->
+
+  <h2><B>Grouped formule </B></h2>
+<p:selectCheckboxMenu id="groupedd" value="#{userform.array}" label="Formule" style="width: 70rem" class="select1"
+                                multiple="true" filter="true" filterMatchMode="startsWith" panelStyle="width: 70rem" scrollHeight="500">
+   			<f:selectItems value="#{userform.arrayMRH}" label="Formulee"  />
+   				
+   			<f:selectItems value="#{userform.arrayCalinia}" label="Formule Calinia"  />
+   			<f:selectItems value="#{userform.arraySante}"  label="Formulee SANTE" />
+   			<f:selectItems value="#{userform.arrayAuto}"  label="Formulee AUTO " />
+   		</p:selectCheckboxMenu>
+                                  
+                                  
+                                  
+<!--                <h5>Grouped test </h5> -->
+<!--         <p:selectCheckboxMenu id="grouped" value="#{checkboxView.selectedCountries}" label="Countries" style="width: 15rem" -->
+<!--                                 multiple="true" filter="true" filterMatchMode="startsWith" panelStyle="width: 15rem" scrollHeight="250"> -->
+<!--             <f:selectItems value="#{checkboxView.countries}"/> -->
+<!--         </p:selectCheckboxMenu> -->
+                                                    
+         </h:panelGrid>  
+         
+         
+         
+  <p:commandButton value="Valider" styleClass="ui-button-outlined"  action="EnumPageR.xhtml" />
+ 
+
+</h:form>  
+</h:body>  
+</html> 
+
+
+
+
+
+ 

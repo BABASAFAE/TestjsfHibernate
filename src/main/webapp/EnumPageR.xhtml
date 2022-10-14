@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"  >
+<head>
+  <title><ui:insert name="title">Default title</ui:insert></title>
+</head>
+
+<body>
+<h:form>
+	<ol>
+<!--     		<li>user.favFood1 : #{user.favFood1InString}</li> -->
+<!--     		<li>user.favFood2 : #{user.favFood2InString}</li> -->
+<!--     		<li>user.favFood3 : #{user.favFood3InString}</li> -->
+    		
+    		<li>produits sélectionnés: #{formu.getArray()}</li>
+    		
+    		
+    		
+    	</ol>
+    	
+    		<ui:repeat value="#{formu.getArray()}" var="e">
+  						<h:outputText value=" valeur #{e}"/>
+  						<br/>
+				</ui:repeat>
+</h:form>
+
+</body>
+
+</html>

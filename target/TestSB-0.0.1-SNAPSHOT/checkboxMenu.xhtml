@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"  
+xmlns:p="http://primefaces.org/ui"  
+xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+  <title><ui:insert name="title">Default title</ui:insert></title>
+</head>
+
+<body>
+<div>
+    <h:form>
+        
+        <p:growl>
+            <p:autoUpdate/>
+        </p:growl>
+        <h5>Grouped</h5>
+        <p:selectCheckboxMenu id="grouped" value="#{checkboxView.selectedCountries}" label="Countries" style="width: 15rem"
+                                multiple="true" filter="true" filterMatchMode="startsWith" panelStyle="width: 15rem" scrollHeight="250">
+            <f:selectItems value="#{checkboxView.countries}"/>
+        </p:selectCheckboxMenu>
+    </h:form>
+</div>
+
+</body>
+
+</html>

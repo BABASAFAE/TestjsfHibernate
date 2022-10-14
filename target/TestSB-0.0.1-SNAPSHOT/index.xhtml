@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	  
+	  >
+
+<h:head>
+<style>
+th {
+  color:  #DB7093 !important;
+}
+
+
+h3{ color :#DB7093;
+margin-left:500px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color:  #FFC0CB;}
+input[type=submit] {
+  margin-left:400px;
+  width: 900px;
+  background-color: LightGreen;
+  color: black;
+  padding: 14px 20px;
+  
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+</style>
+
+
+</h:head>
+<body>
+
+	<h3> Product List  </h3>
+	<h:form prependId="false" class ="form">
+	
+		<h:dataTable var="product" value="#{productbean.products}"
+			border="1" cellpadding="2" cellspacing="2" class="table">
+			<h:column style="text-align:center; background-color:#C6C3C6;padding:12px;" >
+		
+				<f:facet name="header">Id</f:facet>
+				 #{product.id} 
+			</h:column>
+			<h:column  >
+				<f:facet name="header">Name</f:facet>
+				#{product.name}
+			</h:column>
+			<h:column >
+				<f:facet name="header">Description</f:facet>
+				#{product.description}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Price</f:facet>
+				#{product.price}
+			</h:column>
+			<h:column  >
+				<f:facet name="header">Quantity</f:facet>
+				#{product.quantity}
+			</h:column>
+			<h:column  >
+				<f:facet name="header">Status</f:facet>
+				#{product.status}
+			</h:column>
+		</h:dataTable>
+		<br/>	<br/>
+
+	<br/>	<br/>
+	</h:form>
+<h:form>
+	<h:commandButton id="submit-button" value="Allez au formulaire" action="form.xhtml"  style="width:340px" look="info" class="buton"/>  
+	
+	
+
+	</h:form>
+
+	
+
+</body>
+</html>

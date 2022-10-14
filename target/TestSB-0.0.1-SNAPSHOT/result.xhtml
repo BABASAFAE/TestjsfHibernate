@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"   
+xmlns:h = "http://java.sun.com/jsf/html"
+xmlns:f = "http://java.sun.com/jsf/core"
+   xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:fn="http://xmlns.jcp.org/jsp/jstl/functions"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+<h:head>
+  <title>Default title</title>
+</h:head>
+ 
+<h:body>
+ <h:form id="user-form">
+page de resultat : <br/> <br/> 
+ Le prenom de Souscripteur est  : #{formu.firstName} <br/> 
+ Le nom de Souscripteur est : #{formu.lastName}<br/> 
+  Age est  : #{formu.agee} <br/> 
+  Numero de telephone est : #{formu.numtel}<br/> 
+  date de naissance est :  #{formu.date}<br/> 
+ 
+ id est  #{formu.id}
+ 
+    	
+	<br/>
+    	
+   <ui:repeat value = "#{formu.menuItems}" var = "s">		
+       liste de menuItems : #{s}
+      </ui:repeat>
+      
+      
+    		<li>produits sélectionnés: #{formu.getArray()}</li>
+    		
+    		
+    		
+   
+    	
+    		<ui:repeat value="#{formu.getArray()}" var="e">
+  						<h:outputText value=" valeur #{e}"/>
+  						<br/>
+				</ui:repeat>
+				
+    <br/>
+    <h:commandButton id="submit-button" value="Ajouter un employe" action="#{formu.saveStudentRecord}"/>  
+    </h:form>	
+    	
+    	
+
+
+   		<br />
+   		
+   		
+   		
+   		
+   		 
+   		
+   		
+  
+
+</h:body>
+
+</html>

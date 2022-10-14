@@ -1,0 +1,327 @@
+package conf.entities;
+
+
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.model.SelectItem;
+import javax.faces.model.SelectItemGroup;
+
+//import com.mkyong.UserBean.Food;
+@ManagedBean(name="userform")
+@SessionScoped
+public class Formule implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	//private static final Enumeration<Calinia> Calinia = null;
+//	public String[] favFood1;
+//	public String[] favFood2;
+//	public String[] favFood3;
+	public Auto autoo;	
+	private Calinia Calinia;
+	private Auto Auto;
+	private MRH MRH;
+	private Sante Sante;
+	private List<SelectItem> countries;
+	 public MRH getMRH() {
+		return MRH;
+	}
+
+	public void setMRH(MRH mRH) {
+		MRH = mRH;
+	}
+
+	public Sante getSante() {
+		return Sante;
+	}
+
+	public void setSante(Sante sante) {
+		Sante = sante;
+	}
+
+	public Calinia getCalinia() {
+		return Calinia;
+	}
+
+	public void setCalinia(Calinia calinia) {
+		Calinia = calinia;
+	}
+	private ArrayList <MRH> arrayMRH;
+	private ArrayList <Sante> arraySante;
+	private ArrayList <Auto> arrayAuto;
+	
+	public ArrayList<MRH> getArrayMRH() {
+		arrayMRH= new ArrayList <MRH>();
+		for (MRH day : MRH.values()) { 
+			// ArrayList<Calinia> arrayList = Collections.list(Calinia);
+			 //for( e:Calinia) {
+			arrayMRH.add(day);
+			   // System.out.println("enum list MRH "+day);
+			}
+		
+		
+		
+		return arrayMRH;
+	}
+
+	public void setArrayMRH(ArrayList<MRH> arrayMRH) {
+		this.arrayMRH = arrayMRH;
+	}
+
+	public ArrayList<Sante> getArraySante() {
+		arraySante= new ArrayList <Sante>();
+		for (Sante day : Sante.values()) { 
+			// ArrayList<Calinia> arrayList = Collections.list(Calinia);
+			 //for( e:Calinia) {
+			arraySante.add(day);
+			  //  System.out.println("enum list Sante "+day);
+			}
+		
+		
+		
+		return arraySante;
+	}
+	
+
+	public void setArraySante(ArrayList<Sante> arraySante) {
+		this.arraySante = arraySante;
+	}
+
+	public ArrayList<Auto> getArrayAuto() {
+		arrayAuto= new ArrayList <Auto>();
+		for (Auto day : Auto.values()) { 
+			// ArrayList<Calinia> arrayList = Collections.list(Calinia);
+			 //for( e:Calinia) {
+			arrayAuto.add(day);
+			   // System.out.println("enum list"+day); 
+			}
+		
+		
+		
+		return arrayAuto;
+	}
+
+	public void setArrayAuto(ArrayList<Auto> arrayAuto) {
+		this.arrayAuto = arrayAuto;
+	}
+	private ArrayList <Calinia> arrayCalinia;
+	
+	
+	  
+	public ArrayList<Calinia> getArrayCalinia() {
+		arrayCalinia= new ArrayList <Calinia>();
+		for (Calinia day : Calinia.values()) { 
+			// ArrayList<Calinia> arrayList = Collections.list(Calinia);
+			 //for( e:Calinia) {
+				arrayCalinia.add(day);
+			    //System.out.println("enum list"+day);
+				}
+		
+//		
+//		 for(Calinia e: arrayCalinia) {
+//			    System.out.println("array list"+e);  
+//		  }
+		return arrayCalinia;
+	}
+
+	public void setArrayCalinia(ArrayList<Calinia> array) {
+		this.arrayCalinia = array;
+	}
+
+
+	public Auto getAuto() {
+		return Auto;
+	}  
+
+	public void setAuto(Auto auto) {
+		this.Auto = auto;
+	}
+
+//	public String[] getFavFood1() {
+//		return favFood1;
+//	}
+//
+//	public void setFavFood1(String[] favFood1) {
+//		this.favFood1 = favFood1;
+//	}
+//
+//	public String[] getFavFood2() {
+//		return favFood2;
+//	}
+//
+//	public void setFavFood2(String[] favFood2) {
+//		this.favFood2 = favFood2;
+//	}
+//
+//	public String[] getFavFood3() {
+//		return favFood3;
+//	}
+//
+//	public void setFavFood3(String[] favFood3) {
+//		this.favFood3 = favFood3;
+//	}
+//
+//	public String getFavFood1InString() {
+//		return Arrays.toString(favFood1);
+//	}
+//	
+//	public String getFavFood2InString() {
+//		return Arrays.toString(favFood2);
+//	}
+//	
+//	public String getFavFood3InString() {
+//		return Arrays.toString(favFood3);
+//	}
+	public String getFavFoodCaliniaInString() {
+		String[] array = new String[arrayCalinia.size()];
+		int index = 0;
+		for (Object value : arrayCalinia) {
+		  array[index] = (String) value;
+		  index++;
+		}
+	
+		return Arrays.toString(array);
+	}
+	
+	public String getFavFoodSanteInString() {
+		String[] array = new String[arraySante.size()];
+		int index = 0;
+		for (Object value : arraySante) {
+		  array[index] = (String) value;
+		  index++;
+		}
+	
+		return Arrays.toString(array);
+	
+	}
+	
+	public String getFavFoodMRHInString() {
+		String[] array = new String[arrayMRH.size()];
+		int index = 0;
+		for (Object value : arrayMRH) {
+		  array[index] = (String) value;
+		  index++;
+		}
+	
+		return Arrays.toString(array);
+	}
+	public String getFavFoodAutoInString() {
+		String[] array = new String[arrayAuto.size()];
+		int index = 0;
+		for (Object value : arrayAuto) {
+		  array[index] = (String) value;
+		  index++;
+		}
+	
+		return Arrays.toString(array);
+	}
+	
+	//Generated by Map
+//	private static Map<String,Object> food2Value;
+//	static{
+//		food2Value = new LinkedHashMap<String,Object>();
+//		food2Value.put("Food2 - Fry Checken", "Fry Checken"); //label, value
+//		food2Value.put("Food2 - Tomyam Soup", "Tomyam Soup");
+//		food2Value.put("Food2 - Mixed Rice", "Mixed Rice");
+//	}
+//	
+//	public Map<String,Object> getFavFood2Value() {
+//		return food2Value;
+//	}
+	public Auto getFavFood2Values() {
+		
+		//for (Calinia day : Calinia.values()) { 
+		// ArrayList<Calinia> arrayList = Collections.list(Calinia);
+		 //for( e:Calinia) {
+			//arrayCalinia.add(day);
+			
+		    //System.out.println("enum list"+day); }
+		
+		
+		    //getFavFood2Values().add(day);
+		 
+		    
+		
+		return Auto;
+	}
+	
+
+	//Generated by Object array
+//	public static class Food{
+//		public String foodLabel;
+//		public String foodValue;
+//		
+//		public Food(String foodLabel, String foodValue){
+//			this.foodLabel = foodLabel;
+//			this.foodValue = foodValue;
+//		}
+//		
+//		public String getFoodLabel(){
+//			return foodLabel;
+//		}
+//		
+//		public String getFoodValue(){
+//			return foodValue;
+//		}
+//		
+//	}
+//	
+//	public Food[] food3List;
+//	
+//	public Food[] getFavFood3Value() {
+//		
+//		food3List = new Food[3];
+//		food3List[0] = new Food("Food3 - Fry Checken", "Fry Checken");
+//		food3List[1] = new Food("Food3 - Tomyam Soup", "Tomyam Soup");
+//		food3List[2] = new Food("Food3 - Mixed Rice", "Mixed Rice");
+//		
+//		return food3List;
+//	}
+	private ArrayList<String> array =new ArrayList<String>();
+	public ArrayList<String> getArray() {
+		return array;
+	}
+
+	public void setArray(ArrayList<String> array) {
+		this.array = array;
+	}
+	
+
+//	public Formule() {
+//		super();
+//		SelectItemGroup americaCountries = new SelectItemGroup("American Countries");
+//        americaCountries.setSelectItems(new SelectItem[]{
+//            new SelectItem("United States", "United States"),
+//            new SelectItem("Brazil", "Brazil"),
+//            new SelectItem("Mexico", "Mexico")
+//        });
+//
+//        countries.add(americaCountries);
+//	}
+	 
+	
+//	SelectItemGroup groupCalinia= new SelectItemGroup("Calinia ");
+	//groupCalinia.setSelectItems()
+//	  options = new ArrayList<SelectItem>();
+//
+//	  SelectItemGroup group1 = new SelectItemGroup("Group 1");
+//	  group1.setSelectItems(new SelectItem[] {
+//	    new SelectItem("Group 1 Value 1", "Group 1 Label 1"),
+//	    new SelectItem("Group 1 Value 2", "Group 1 Label 2"),
+//	    new SelectItem("Group 1 Value 3", "Group 1 Label 3")
+//	  });
+//	  options.add(group1);
+	  
+	  
+	
+}

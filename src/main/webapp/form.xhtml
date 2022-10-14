@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+  <title><ui:insert name="title">Default title</ui:insert></title>
+  
+  
+  <style>
+ 
+ 
+  </style>
+</h:head>
+
+<h:body>
+
+ 
+
+
+<h2> La page formulaire </h2>
+<br/> <br/> 
+  
+
+      
+   
+<h:form id="user-forme"> 
+
+
+              
+          
+ 
+<h:selectManyCheckbox id="menuItems" value="#{formu.menuItems}" >
+<f:selectItem itemLabel="Auto" itemValue="Auto"/>
+<f:selectItem itemLabel="MRH" itemValue="MRH" />
+<f:selectItem itemLabel="Sante" itemValue="Sante" />
+<f:selectItem itemLabel="Calinia" itemValue="Calinia" />
+</h:selectManyCheckbox>
+
+<br/>
+ 
+ <h:outputLabel for="prodname"> Produits choisies : </h:outputLabel>  
+
+ 
+<p:selectCheckboxMenu id="groupedd" value="#{formu.array}" label="Formule" style="width: 70rem" class="select1"
+                                multiple="true" filter="true" filterMatchMode="startsWith" panelStyle="width: 70rem" scrollHeight="500">
+   			<f:selectItems value="#{formu.arrayMRH}" label="Formulee"  />
+   			<f:selectItems value="#{formu.arrayCalinia}" label="Formule Calinia"  />
+   			<f:selectItems value="#{formu.arraySante}"  label="Formulee SANTE" />
+   			<f:selectItems value="#{formu.arrayAuto}"  label="Formulee AUTO " />
+   		</p:selectCheckboxMenu>
+
+  <p:commandButton value="Validere" styleClass="ui-button-outlined"  action="EnumPageR.xhtml" />
+ 
+<br/>  <br/>   
+
+
+
+ <div class="card">
+       
+        <div class="ui-fluid">
+            <div class="field">
+                <p:outputLabel for="idname1" value="Id Souscripteur: "/>
+                <p:inputText id="idname1" value="#{formu.id}" required="true" requiredMessage="id is required"/>
+            </div>
+            <br/>  <br/>
+            <div class="field">
+                <p:outputLabel for="firstname1" value="Prenom Souscripteur:"/>
+                <p:inputText id="firstname1" value="#{formu.firstName}" required="true" requiredMessage="firstname is required"/>
+            </div>
+            <br/>  <br/>
+             <div class="field">
+                <p:outputLabel for="lastname3" value="Nom Souscripteur:"/>
+                <p:inputText id="lastname3"  value="#{formu.lastName}" required="true" requiredMessage="lastname is required"/>
+            </div>
+            <br/>  <br/>
+             <div class="field">
+                <p:outputLabel for="datename4" value="Date Naissance  :"/>
+<!--                 <p:inputText id="datename4" required="true" requiredMessage="id is required"/> -->
+           <p:calendar id="datename4" value="#{formu.date}" locale="tr" navigator="true" showButtonPanel="true" />
+
+            </div>
+            <br/>  <br/>
+             <div class="field">
+                <p:outputLabel for="agename5" value="Age : "/>
+                <p:inputText id="agename5" value="#{formu.agee}" required="true" requiredMessage="age is required"/>
+            </div>
+            <br/>  <br/>
+             <div class="field">
+                <p:outputLabel for="numname6" value=" Numero de telephone:"/>
+                <p:inputText id="numname6"  value="#{formu.numtel}" required="true" requiredMessage="num is required"/>
+            </div>
+            <br/>  <br/>
+        </div>
+    </div>
+   	
+<!-- <h:outputLabel for="idname">Id Souscripteur: </h:outputLabel>   -->
+<!-- <h:inputText id="idname" value="#{formu.id}" required="true" requiredMessage="id is required"/><br/> <br/>  	 -->
+
+  
+<!-- <h:outputLabel for="firstname">Prenom Souscripteur: </h:outputLabel>  -->
+<!-- <span class="ui-float-label"> -->
+<!--        <p:inputText id="float-input" value="#{formu.firstName}"/> -->
+<!--        <p:outputLabel for="@previous" value="firstName"/> -->
+<!--    </span>  -->
+<!-- <h:inputText id="firstname" value="#{formu.firstName}" required="true" requiredMessage="firstname is required"/><br/> <br/>   -->
+<!-- <h:outputLabel for="lastname">Nom Souscripteur: </h:outputLabel>   -->
+<!-- <h:inputText id="lastname" value="#{formu.lastName}" required="true" requiredMessage="lastname is required"/><br/> <br/>  -->
+<!-- 	<br/> -->
+<!-- 	<h:outputLabel for="datename">Date Naissance  :  </h:outputLabel>  -->
+	
+
+<!-- <p:calendar value="#{formu.date}" locale="tr" navigator="true" showButtonPanel="true" /> -->
+<!-- <br/><br/> -->
+<!-- <h:outputLabel for="agename"> Age :   </h:outputLabel>   -->
+<!-- <h:inputText id="agename" value="#{formu.agee}" required="true" requiredMessage="firstname is required"/><br/> <br/>   -->
+<!-- <br/> -->
+<!-- <h:outputLabel for="phonename"> Numero de telephone: </h:outputLabel>    -->
+<!-- <h:inputText id="numname" value="#{formu.numtel}" required="true" requiredMessage="firstname is required"/><br/> <br/>   -->
+<!-- <br/> -->
+
+
+ <br/>  <br/>
+        		
+
+<h:commandButton id="submit-button" value="Ajouter un employe" action="#{formu.saveStudentRecord()}"/>  
+<br/>  <br/>
+<h:commandButton id="submit-buttonr" value="Valider " action="result.xhtml" />
+<br/>  <br/>
+<h:commandButton id="submit-buttone" value="Show database table 1" action="reponse.xhtml"/>  
+
+ 
+
+
+
+ 
+ 
+</h:form> 
+
+
+<!--     <p:barcode value="0123456789" type="qr" width="125" height="125"/> -->
+<!--    <p:clock displayMode="analog"/> -->
+   
+  
+<!--         <p:messages showDetail="true"/> -->
+<!--         <p:captcha label="Captcha"/> -->
+<!--         <br/> -->
+        
+<!--         <p:commandButton value="Check" action="#{formu.submit()}" ajax="false" icon="pi pi-check"/> -->
+   
+
+
+<!--  <h5 class="mt-0">Basic</h5> -->
+<!--         <p:selectCheckboxMenu id="menu" value="#{checkboxView.selectedCities}" label="Cities" style="width: 15rem" -->
+<!--                                 filter="true" filterMatchMode="startsWith" panelStyle="width: 15rem" scrollHeight="250" -->
+<!--                                 dynamic="true"> -->
+<!--             <f:selectItems value="#{checkboxView.cities}"/> -->
+<!--         </p:selectCheckboxMenu> -->
+
+<!--         <h5>Multiple</h5> -->
+<!--         <p:selectCheckboxMenu id="multiple" value="#{checkboxView.selectedCities2}" label="Cities" style="min-width: 15rem" -->
+<!--                                   multiple="true" filter="true" filterMatchMode="startsWith" panelStyle="width: 30rem" scrollHeight="250" -->
+<!--                                   emptyLabel="Please select..." updateLabel="true"> -->
+<!--               <f:selectItems value="#{checkboxView.cities}"/> -->
+<!--             </p:selectCheckboxMenu> -->
+
+<!--         <h5>Grouped</h5> -->
+<!--         <p:selectCheckboxMenu id="grouped" value="#{checkboxView.selectedCountries}" label="Countries" style="width: 15rem" -->
+<!--                                 multiple="true" filter="true" filterMatchMode="startsWith" panelStyle="width: 15rem" scrollHeight="250"> -->
+<!--             <f:selectItems value="#{checkboxView.countries}"/> -->
+<!--         </p:selectCheckboxMenu> -->
+
+
+
+
+</h:body>
+
+</html>
